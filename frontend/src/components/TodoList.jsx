@@ -14,7 +14,7 @@ function TodoList({ currentUser }) {
     if (priorityFilter) query.append('priority', priorityFilter);
     if (tagFilter) query.append('tags', tagFilter);
 
-    fetch(`http://localhost:8080/api/todos?${query.toString()}`)
+    fetch(`https://dailyround-marrow.onrender.com/api/todos?${query.toString()}`)
       .then(res => res.json())
       .then(setTodos);
   };
@@ -32,8 +32,8 @@ function TodoList({ currentUser }) {
   const handleSave = (data) => {
     const method = editingTodo ? 'PUT' : 'POST';
     const url = editingTodo
-      ? `http://localhost:8080/api/todos/${editingTodo._id}`
-      : `http://localhost:8080/api/todos?user=${currentUser.username}`;
+      ? `https://dailyround-marrow.onrender.com/api/todos/${editingTodo._id}`
+      : `https://dailyround-marrow.onrender.com/api/todos?user=${currentUser.username}`;
 
     fetch(url, {
       method,
