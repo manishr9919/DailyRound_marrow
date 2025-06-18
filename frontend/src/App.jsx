@@ -7,7 +7,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/users")
+    fetch("https://dailyround-marrow.onrender.com/api/users")
       .then(res => res.json())
       .then(data => {
         setUsers(data);
